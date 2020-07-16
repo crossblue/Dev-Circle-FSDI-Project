@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://KenJudd:MernStackDev1%21@devblog.jshw6.mongodb.net/users?retryWrites=true&w=majority",
+  "jwtSecret": "optimusprime"
+}
