@@ -1,4 +1,6 @@
 {
   "mongoURI": "mongodb+srv://KenJudd:MernStackDev1%21@devblog.jshw6.mongodb.net/users?retryWrites=true&w=majority",
-  "jwtSecret": "optimusprime"
+  "jwtSecret": "optimusprime",
+  "githubClientId": "c6ebee9d6b422d53b8db",
+  "githubSecret": "d11bbbb2d4096289209a179b088e020872ee0eac"
 }
