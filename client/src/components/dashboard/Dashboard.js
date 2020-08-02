@@ -2,6 +2,9 @@ import React, { Fragment, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import DashboardActions from './DashboardActions';
+import Experience from './Experience';
+import Education from './Education';
 import { getCurrentProfile } from '../../actions/profile';
 import Spinner from '../layout/Spinner';
 
@@ -23,7 +26,11 @@ const Dashboard = ({
         <i class='fas fa-user'></i> Welcome {user && user.name}
       </p>
       {profile !== null ? (
-        <Fragment>has</Fragment>
+        <Fragment>
+          <DashboardActions />
+          <Experience experience={profile.experience} />
+          <Education experience={profile.education} />
+        </Fragment>
       ) : (
         <Fragment>
           <p>You have not yet setup a profile, please add some info</p>
@@ -32,17 +39,6 @@ const Dashboard = ({
           </Link>
         </Fragment>
       )}
-      <div class='dash-buttons'>
-        <a href='edit-profile.html' class='btn btn-light'>
-          <i class='fas fa-user-circle text-primary'></i> Edit Profile
-        </a>
-        <a href='add-experience.html' class='btn btn-light'>
-          <i class='fab fa-black-tie text-primary'></i> Add Experience
-        </a>
-        <a href='add-education.html' class='btn btn-light'>
-          <i class='fas fa-graduation-cap text-primary'></i> Add Education
-        </a>
-      </div>
     </Fragment>
   );
 };
