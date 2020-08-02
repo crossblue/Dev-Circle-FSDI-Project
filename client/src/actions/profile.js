@@ -1,3 +1,4 @@
+import api from '../utils/api';
 import axios from 'axios';
 import { setAlert } from './alert';
 import {
@@ -164,14 +165,14 @@ export const deleteEducation = (id) => async (dispatch) => {
 //Delete account and profile
 
 export const deleteAccount = () => async (dispatch) => {
-  if (window.confirm('Are you sure ? This can NOT be undone!')) {
+  if (window.confirm('Are you sure? This can NOT be undone!')) {
     try {
-      const res = await axios.delete('/api/profile');
+      await api.delete('/profile');
 
       dispatch({ type: CLEAR_PROFILE });
       dispatch({ type: ACCOUNT_DELETED });
 
-      dispatch(setAlert('Your account has been permanatly deleted'));
+      dispatch(setAlert('Your account has been permanently deleted'));
     } catch (err) {
       dispatch({
         type: PROFILE_ERROR,
